@@ -1,3 +1,4 @@
+import { AuthService } from './../../../main/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/modules/main/services/login.service';
@@ -11,7 +12,7 @@ import { LoginService } from 'src/app/modules/main/services/login.service';
 export class LogComponent implements OnInit {
   frmFormulario: FormGroup = new FormGroup({});
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private readonly authService: AuthService) {
   }
   ngOnInit(): void {
     this.htmlformulario();
@@ -26,21 +27,25 @@ export class LogComponent implements OnInit {
       ]),
     });
   }
-  //envio de datos
-  sendLogin() {
-    const { email, password } = this.frmFormulario.value;
-    this.loginService.sendLogin(email, password).subscribe(
-      token => {
-        localStorage.setItem('token', token.access_token);
-        localStorage.setItem('id', token.id);
+     auth(): void {
+      this.authService.GoogleAuth();
+     }
+  // //envio de datos
+  // sendLogin() {
+  //   const { email, password } = this.frmFormulario.value;
+  //   this.loginService.sendLogin(email, password).subscribe(
+  //     token => {
+  //       localStorage.setItem('token', token.access_token);
+  //       localStorage.setItem('id', token.id);
+  //       console.log("inicio de sesion")
 
-      },
-      error => {
-        console.log('no entro.');
-      }
-    );
+  //     },
+  //     error => {
+  //       console.log('no entro.');
+  //     }
+  //   );
   }
 
 
 
-}
+

@@ -8,22 +8,23 @@ import {
   redirectUnauthorizedTo
 } from '@angular/fire/compat/auth-guard';
 import { LogComponent } from '../../banco/pages/log/log.component';
+import { PrincipalComponent } from '../../banco/pages/principal/principal.component';
 
-// const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['banco/usuario']);
-// const redirectLoggedInToDashboard = () => redirectLoggedInTo(['banco/registro']);
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['banco/login']);
+const redirectLoggedInToDashboard = () => redirectLoggedInTo(['banco']);
 const routes: Routes = [
-  // {
-  //   path: 'banco/usuario',
-  //   component: DatosUsuarioComponent,
-  //   canActivate: [AngularFireAuthGuard],
-  //   data: { authGuardPipe: redirectLoggedInToDashboard }
-  // },
-  // {
-  //   path: 'banco/registro',
-  //   component:  LogComponent,
-  //   canActivate: [AngularFireAuthGuard],
-  //   data: { authGuardPipe: redirectUnauthorizedToLogin }
-  // },
+  {
+    path: 'banco/login',
+    component: LogComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToDashboard }
+  },
+  {
+    path: 'banco',
+    component:  PrincipalComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin }
+  },
 
    { path: 'banco',
     loadChildren: () => import('src/app/modules/banco/banco.module').then(m => m.BancoModule)  //localhost:4200/banco

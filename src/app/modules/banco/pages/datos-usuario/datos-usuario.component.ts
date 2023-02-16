@@ -1,4 +1,4 @@
-import { AccountInterface } from './../../../main/interfaces/account.interface';
+import { AccountInterface } from '../../interfaces/account.interface';
 import { UsersService } from './../../../main/services/users/users.service';
 import { UserModel } from './../../../main/models/user.model';
 import { Component, OnInit } from '@angular/core';

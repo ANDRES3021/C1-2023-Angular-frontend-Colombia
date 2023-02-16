@@ -1,4 +1,4 @@
-import { NewUserModel } from "../models/new-user.model";
+import { NewUserModel } from "../../main/models/new-user.model";
 
 export interface INewUser {
   access_token: string;

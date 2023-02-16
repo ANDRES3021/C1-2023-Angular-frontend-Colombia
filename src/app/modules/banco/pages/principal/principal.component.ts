@@ -1,3 +1,4 @@
+import { AuthService } from './../../../main/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly authService: AuthService) { }
 
+  logout(): void {
+    this.authService.SignOut();
+  }
   ngOnInit(): void {
   }
 

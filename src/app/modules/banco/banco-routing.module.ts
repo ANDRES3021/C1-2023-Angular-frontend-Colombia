@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'principal', //localhost:4200/banco
+  { path: '', //localhost:4200/banco
     component: PrincipalComponent,
 },
 { path: 'usuario', //localhost:4200/banco
@@ -22,10 +22,10 @@ component: HistorialComponent,
 { path: 'transferencia', //localhost:4200/banco
 component: TransferenciaComponent,
 },
-{ path: 'registro', //localhost:4200/banco
+{ path: 'login', //localhost:4200/banco
 component: LogComponent,
 },
-{ path: 'formu', //localhost:4200/banco
+{ path: 'registro', //localhost:4200/banco
 component: RegisterComponent,
 },
 ];

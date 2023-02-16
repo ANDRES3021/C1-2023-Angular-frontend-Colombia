@@ -1,5 +1,5 @@
 import { getLocaleDateFormat } from "@angular/common";
-import { IDocumenType } from "../interfaces/documentType.interface";
+import { IDocumenType } from "../../banco/interfaces/documentType.interface";
 
 export class UserModel {
 

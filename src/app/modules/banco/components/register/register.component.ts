@@ -1,4 +1,4 @@
-import { IUsers } from '../../../main/interfaces/users.interface';
+import { IUsers } from '../../interfaces/users.interface';
 import { NewUserModel } from '../../../main/models/new-user.model';
 import { UsersService } from '../../../main/services/users/users.service';
 import { Component, OnInit } from '@angular/core';

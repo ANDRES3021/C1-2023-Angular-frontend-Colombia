@@ -1,4 +1,4 @@
-import { UserModel } from '../models/user.model';
+import { UserModel } from '../../main/models/user.model';
 import { IDocumenType } from './documentType.interface';
 
 export interface IUsers {
