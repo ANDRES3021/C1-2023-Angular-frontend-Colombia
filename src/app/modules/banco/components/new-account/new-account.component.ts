@@ -1,4 +1,4 @@
-import { NewAccountService } from './../../../../main/services/account/new-account.service';
+import { NewAccountService } from '../../../main/services/account/new-account.service';
 import { Component, OnInit } from '@angular/core';
 
 

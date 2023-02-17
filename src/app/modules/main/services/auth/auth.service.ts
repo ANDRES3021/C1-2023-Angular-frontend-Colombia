@@ -12,7 +12,7 @@ export class AuthService {
 
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['banco']);
+      this.router.navigate(['banco/home']);
     });
   }
   // Auth logic to run auth providers
@@ -20,7 +20,7 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['banco']);
+        this.router.navigate(['banco/home']);
         console.log(result);
         localStorage.setItem('user', JSON.stringify(result.user));
         // this.SetUserData(result.user);

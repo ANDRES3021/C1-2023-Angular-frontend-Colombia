@@ -11,7 +11,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, NgForm, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NarvarComponent } from './components/narvar/narvar/narvar.component';
-import { NewAccountComponent } from './components/newAccount/new-account/new-account.component';
+import { NewAccountComponent } from './components/new-account/new-account.component';
 
 
 
