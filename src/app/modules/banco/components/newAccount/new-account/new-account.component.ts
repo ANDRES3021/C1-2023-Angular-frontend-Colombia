@@ -12,7 +12,8 @@ export class NewAccountComponent implements OnInit {
   constructor(private readonly newAccountService: NewAccountService) { }
 
   newAccount(accountTypeId: string):void{
-    this.newAccountService.createAccount(accountTypeId, localStorage.getItem("Id") as string).subscribe({
+    console.log(accountTypeId, localStorage.getItem("id")),
+    this.newAccountService.createAccount(accountTypeId, localStorage.getItem("id") as string).subscribe({
       next: data => console.log(data),
       error: err => {console.log(err);
       },

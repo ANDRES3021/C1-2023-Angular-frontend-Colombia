@@ -12,12 +12,13 @@ export class NewAccountService {
   constructor(private readonly httpClient: HttpClient) { }
   createAccount(
     accountTypeId: string,
-    CustomerEntityId: string,
+    Customer: string,
   ): Observable<AccountInterface> {
     const newAccount = {
       accountType: accountTypeId,
-      CustomerEntity: CustomerEntityId,
+      Customer: Customer,
       balance: "0",
+      state: true
     };
   return this.httpClient.post<AccountInterface>(
     "http://localhost:3000/account", newAccount
