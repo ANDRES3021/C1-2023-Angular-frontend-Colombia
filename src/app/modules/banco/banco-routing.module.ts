@@ -2,7 +2,7 @@ import { DepositComponent } from './pages/deposit/deposit.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogComponent } from './pages/log/log.component';
-import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+
 import { HistorialComponent } from './pages/historial/historial.component';
 import { DatosUsuarioComponent } from './pages/datos-usuario/datos-usuario.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
@@ -21,9 +21,6 @@ component: DatosUsuarioComponent,
 { path: 'historial', //localhost:4200/banco
 component: HistorialComponent,
 },
-{ path: 'transferencia', //localhost:4200/banco
-component: TransferenciaComponent,
-},
 { path: 'login', //localhost:4200/banco
 component: LogComponent,
 },
@@ -36,6 +33,7 @@ component: NewAccountComponent,
 { path: 'deposito', //localhost:4200/banco
 component: DepositComponent,
 },
+
 ];
 
 @NgModule({

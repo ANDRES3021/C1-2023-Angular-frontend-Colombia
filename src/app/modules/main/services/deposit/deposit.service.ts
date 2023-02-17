@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICreateDeposit } from 'src/app/modules/banco/interfaces/createdeposit.model';
 import { DepositInterface } from 'src/app/modules/banco/interfaces/rtDeposit.model';
 
 import { DepositModel } from '../../models/eposit.Model';

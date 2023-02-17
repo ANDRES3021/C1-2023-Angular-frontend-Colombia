@@ -13,9 +13,17 @@ import { DepositService } from 'src/app/modules/main/services/deposit/deposit.se
   templateUrl: './deposit.component.html',
   styleUrls: ['./deposit.component.scss'],
 })
+/* Creating a new instance of the DepositComponent class. */
 export class DepositComponent implements OnInit {
   frmDeposit: FormGroup;
 
+  /**
+   * The constructor function is used to initialize the class and it is called when the class is
+   * instantiated
+   * @param {DepositService} depositService - This is the service that we created earlier.
+   * @param {FormBuilder} frmBuilder - FormBuilder - This is the FormBuilder service that we imported
+   * earlier.
+   */
   constructor(
     private readonly depositService: DepositService,
     private frmBuilder: FormBuilder
@@ -32,6 +40,10 @@ export class DepositComponent implements OnInit {
     });
   }
 
+  /**
+   * The function creates a deposit by calling the createDeposit() function of the depositService,
+   * passing in the raw value of the form
+   */
   createDeposit() {
     this.depositService.createDeposit(this.frmDeposit.getRawValue()).subscribe({
       next: data => {

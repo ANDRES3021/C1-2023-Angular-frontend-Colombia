@@ -9,6 +9,7 @@ import { LoginService } from 'src/app/modules/main/services/login/login.service'
   templateUrl: './log.component.html',
   styleUrls: ['./log.component.scss']
 })
+/* Creating a new FormGroup object, which is a collection of FormControl objects. */
 export class LogComponent implements OnInit {
   frmFormulario: FormGroup = new FormGroup({});
 
@@ -17,6 +18,9 @@ export class LogComponent implements OnInit {
   ngOnInit(): void {
     this.htmlformulario();
   }
+ /**
+  * The function creates a new FormGroup object, which is a collection of FormControl objects
+  */
   htmlformulario(): void {
     this.frmFormulario = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -30,20 +34,7 @@ export class LogComponent implements OnInit {
      auth(): void {
       this.authService.GoogleAuth();
      }
-  // //envio de datos
-  // sendLogin() {
-  //   const { email, password } = this.frmFormulario.value;
-  //   this.loginService.sendLogin(email, password).subscribe(
-  //     token => {
-  //       localStorage.setItem('token', token.access_token);
-  //       localStorage.setItem('id', token.id);
-  //       console.log("inicio de sesion")
 
-  //     },
-  //     error => {
-  //       console.log('no entro.');
-  //     }
-  //   );
   }
 
 

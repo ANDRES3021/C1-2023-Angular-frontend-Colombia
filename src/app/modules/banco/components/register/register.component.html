@@ -31,9 +31,9 @@
             <input type="email"  class="form-control form-control-lg"
               placeholder="Enter a valid email address" formControlName="email" name="email"/>
               <label class="form-label">Email address</label>
-            <!-- <div class="altoMensaje"
+            <div class="altoMensaje"
               *ngIf ="frmFormulario.get('email')?.touched">El correo que ingresaste no es válido
-            </div> -->
+            </div>
             <div class="altoMensaje"
                   *ngIf="
                   frmFormulario.get('email')?.touched  && frmFormulario.get('email')?.hasError('required')
@@ -118,6 +118,8 @@
             <input type="submit" form="register" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="registercustomer()" value="Register">
           </div>
+          <div><a href="banco/login" class="btn btn-primary btn-lg">Login</a></div>
+
 
         </form>
       </div>

@@ -37,3 +37,13 @@
   background-color: hsla(0, 0%, 100%, 0.9) !important;
   backdrop-filter: saturate(200%) blur(25px);
 }
+#account {
+  margin-bottom: 1rem;
+}
+
+#amount {
+  margin-bottom: 1rem;
+}
+label {
+  color: #fff; /* Establece el color del texto en blanco */
+}

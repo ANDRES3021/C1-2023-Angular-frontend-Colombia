@@ -11,7 +11,7 @@ import { LogComponent } from '../../banco/pages/log/log.component';
 import { PrincipalComponent } from '../../banco/pages/principal/principal.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['banco/login']);
-const redirectLoggedInToDashboard = () => redirectLoggedInTo(['banco']);
+const redirectLoggedInToDashboard = () => redirectLoggedInTo(['banco/home']);
 const routes: Routes = [
   {
     path: 'banco/login',
@@ -20,7 +20,7 @@ const routes: Routes = [
     data: { authGuardPipe: redirectLoggedInToDashboard }
   },
   {
-    path: 'banco',
+    path: 'banco/home',
     component:  PrincipalComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin }

@@ -2,3 +2,12 @@
   height: 15px;
   color: red;
 }
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .register-button {
+    margin-right: 10px;
+  }
+}
