@@ -1,51 +1,73 @@
-<app-narvar></app-narvar>
-<!-- Section: Design Block -->
-<section class="background-radial-gradient overflow-hidden">
-  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-    <div class="row gx-lg-5 align-items-center mb-5">
-      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-          Welcome to sofka Bank <br />
-          <span style="color: hsl(218, 81%, 75%)">for your business</span>
-        </h1>
-        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-          This bank offers transfer services between how many at no cost,
-          in addition to minimal handling fees, you can also have several
-          types of accounts and transfer between accounts of different banks
-        </p>
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">numero de cuenta a transferir </label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="numero de cuenta a transferir">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">cantidad de dinero a transferir</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="cantidad de dinero a transferir">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">razon de la transferencia</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="razon de la transferencia">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-
-      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
-        <div class="card bg-glass">
-          <div class="card-body px-4 py-5 px-md-5">
-
-          </div>
+<div class="container-login">
+  <div class="row">
+    <div class="card">
+      <form
+        id="transfer-login"
+        class="box form-login"
+        (ngSubmit)="createDeposit()"
+        [formGroup]="frmDeposit"
+      >
+        <h1>Deposito</h1>
+        <input
+          type="text"
+          name="account"
+          formControlName="account"
+          placeholder="Id de la cuenta"
+        />
+        <div
+          class="text-danger div-alert"
+          *ngIf="
+            frmDeposit.get('account')?.hasError('required') &&
+            frmDeposit.get('account')?.touched
+          "
+        >
+          *El número de cuenta es obligatoria
         </div>
-      </div>
+        <div
+          class="text-danger div-alert"
+          *ngIf="
+            frmDeposit.get('account')?.hasError('minlength') &&
+            frmDeposit.get('account')?.touched
+          "
+        >
+          *El número de cuenta es incorrecto
+        </div>
+        <input
+          type="text"
+          name="amount"
+          formControlName="amount"
+          placeholder="cuanto"
+        />
+        <div
+          class="text-danger div-alert"
+          *ngIf="
+            frmDeposit.get('amount')?.hasError('required') &&
+            frmDeposit.get('amount')?.touched
+          "
+        >
+          *El valor es obligatorio
+        </div>
+        <div
+          class="text-danger div-alert"
+          *ngIf="
+            frmDeposit.get('amount')?.hasError('pattern') &&
+            frmDeposit.get('amount')?.touched
+          "
+        >
+          *El valor no es valido
+        </div>
+        <input
+          type="submit"
+          form="transfer-login"
+          name=""
+          value="enviar"
+          [disabled]="frmDeposit.invalid"
+          href="#"
+        />
+        <br />
+      </form>
     </div>
   </div>
-</section>
-<!-- Section: Design Block -->
+</div>
+Footer
+

@@ -1,3 +1,4 @@
+import { DepositComponent } from './pages/deposit/deposit.component';
 import { bancoRoutingModule } from './banco-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,7 +26,9 @@ import { NewAccountComponent } from './components/new-account/new-account.compon
     PrincipalComponent,
     RegisterComponent,
     NarvarComponent,
+    DepositComponent,
     NewAccountComponent,
+
 
 
 

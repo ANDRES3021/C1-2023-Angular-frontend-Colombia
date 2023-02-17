@@ -1,3 +1,4 @@
+import { DepositComponent } from './pages/deposit/deposit.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogComponent } from './pages/log/log.component';
@@ -31,6 +32,9 @@ component: RegisterComponent,
 },
 { path: 'crearcuenta', //localhost:4200/banco
 component: NewAccountComponent,
+},
+{ path: 'deposito', //localhost:4200/banco
+component: DepositComponent,
 },
 ];
 

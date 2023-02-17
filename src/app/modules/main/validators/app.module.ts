@@ -1,4 +1,5 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
@@ -20,12 +21,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    ReactiveFormsModule,
-    FormsModule
+    AngularFireAuthModule
+
   ],
   declarations: [
     AppComponent,

@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICreateDeposit } from 'src/app/modules/banco/interfaces/createdeposit.model';
-import { IResDeposit } from 'src/app/modules/banco/interfaces/rtDeposit.model';
+import { DepositInterface } from 'src/app/modules/banco/interfaces/rtDeposit.model';
+
+import { DepositModel } from '../../models/eposit.Model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +13,15 @@ export class DepositService {
 
   constructor(private readonly httpClient: HttpClient) {}
 
-  createDeposit(deposit: ICreateDeposit): Observable<IResDeposit> {
-    return this.httpClient.post<IResDeposit>(
+  createDeposit(deposit: DepositModel): Observable<DepositInterface> {
+    return this.httpClient.post<DepositInterface>(
       'http://localhost:3000/deposit/create',
       deposit
     );
   }
 
-  getDepositsById(id: string): Observable<IResDeposit> {
-    return this.httpClient.get<IResDeposit>(
+  getDeposit(id: string): Observable<DepositInterface> {
+    return this.httpClient.get<DepositInterface>(
       'http://localhost:3000/deposit/' + id
     );
   }
