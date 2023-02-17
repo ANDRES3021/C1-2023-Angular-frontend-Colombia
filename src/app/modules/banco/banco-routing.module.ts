@@ -1,3 +1,4 @@
+import { NewAccountComponent } from './components/newAccount/new-account/new-account.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogComponent } from './pages/log/log.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
@@ -10,7 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', //localhost:4200/banco
+  { path: 'home', //localhost:4200/banco
     component: PrincipalComponent,
 },
 { path: 'usuario', //localhost:4200/banco
@@ -27,6 +28,9 @@ component: LogComponent,
 },
 { path: 'registro', //localhost:4200/banco
 component: RegisterComponent,
+},
+{ path: 'crearcuenta', //localhost:4200/banco
+component: NewAccountComponent,
 },
 ];
 

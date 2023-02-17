@@ -38,3 +38,87 @@
   background-color: hsla(0, 0%, 100%, 0.9) !important;
   backdrop-filter: saturate(200%) blur(25px);
 }
+.wrapper{
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #060d25;
+}
+
+
+.card{
+
+  width: 400px;
+  background-color: #001334;
+  color: #fff;
+
+}
+
+.about{
+  width: 400px;
+  padding: 10px;
+  color: #fff;
+}
+
+.about small{
+
+  font-size: 10px;
+}
+
+hr{
+
+  color: #fff;
+  margin-top: 0px;
+}
+
+
+.steam{
+  margin-top: -5px;
+}
+
+
+
+.seller{
+      margin-top: -6px;
+      font-size: 14px;
+}
+
+
+.steam-price{
+
+      margin-right: 115px !important;
+}
+
+.margin{
+      margin-top: -6px;
+    color: #6c757d !important;
+    font-size: 13px;
+}
+
+.response div{
+
+  margin-right: 10px;
+}
+
+.fa-check-circle{
+  color: #1775e5;
+}
+
+
+.fa-thumbs-up{
+      color: #79d254;
+}
+
+
+
+.fa-thumbs-down{
+    color: #e05a59;
+}
+
+
+.cart{
+  height: 50px;
+}

@@ -16,7 +16,7 @@
           Here you can see your account details and balance.
         </p>
 
-        <div><table class="table table-dark">
+        <!-- <div><table class="table table-dark">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -32,21 +32,87 @@
               <td>{{info.balance}}</td>
               <td>{{info.accountType.name}}</td>
               <td>{{info.id}}</td>
-            </tr>
+            </tr>*ngFor="let info of accounts"
 
           </tbody>
-        </table></div>
+        </table></div> -->
+      </div>
+      <div *ngFor="let info of accounts">
+        <div class="card py-3 px-2">
+
+          <div class="about">
+
+              <small class="text-uppercase text-muted">tipo de cuenta</small>
+              <h3 class="mb-0">{{info.accountType.name}}</h3>
+              <small class="text-uppercase text-muted">{{info.id}}</small>
+
+
+          </div>
+
+          <hr>
+
+          <div class="d-flex justify-content-between align-items-center p-2 text-white">
+
+              <h2>{{info.balance | currency }}</h2>
+
+              <div class="d-flex flex-column steam-price">
+
+                  <div class="d-flex flex-row align-items-center">
+
+                      <i class="fa fa-check-circle"></i>
+                      <small class="ml-1">Pesos</small>
+
+                  </div>
+
+                  <small class="text-muted steam">Saldo cuenta</small>
+
+              </div>
+
+          </div>
+
+          <hr>
+
+
+          <div class="d-flex justify-content-between align-items-center p-2">
+
+              <div class="d-flex flex-row align-items-center">
+                  <img src="https://img.icons8.com/fluent/96/000000/user-male-circle.png" width="40" />
+                  <div class="d-flex flex-column ml-2">
+                      <span>{{info.customer.fullName}}</span>
+                      <small class="text-muted seller">{{info.customer.email}}</small>
+
+
+                  </div>
+              </div>
+          </div>
+
+
+
+          <div class="mt-5 p-2">
+
+              <button class="btn btn-primary btn-block cart"><a href="/banco/crearcuenta">crear una nueva cuenta</a></button>
+
+
+              <button class="btn btn-outline-primary btn-block cart"><i class="fa fa-eye text-primary"></i> ver historial de movimientos</button>
+
+          </div>
+
+
+
+
+
+      </div>
       </div>
 
       <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
         <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
         <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
-        <div class="card bg-glass">
+        <!-- <div class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
 
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

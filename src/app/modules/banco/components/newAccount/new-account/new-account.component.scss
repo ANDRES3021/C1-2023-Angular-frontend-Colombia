@@ -1,0 +1,47 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  position: relative;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  background-color: #202231;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: width .5s, border-radius .5s;
+}
+
+.text{
+  position: absolute;
+  left: 35%;
+}
+
+.icon{
+  opacity: 0;
+}
+
+.btn:focus{
+  width: 60px;
+  background-color: #44c08a;
+  border-radius: 50%;
+}
+
+.btn:focus .text{
+  opacity: 0;
+}
+
+.btn:focus .icon{
+  opacity: 1;
+}

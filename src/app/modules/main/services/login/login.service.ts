@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IUsers } from '../../banco/interfaces/users.interface';
+import { IUsers } from 'src/app/modules/banco/interfaces/users.interface';
 
 @Injectable({
   providedIn: 'root',

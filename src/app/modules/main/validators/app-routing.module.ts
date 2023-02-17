@@ -20,7 +20,7 @@ const routes: Routes = [
     data: { authGuardPipe: redirectLoggedInToDashboard }
   },
   {
-    path: 'banco',
+    path: 'banco/home',
     component:  PrincipalComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin }
