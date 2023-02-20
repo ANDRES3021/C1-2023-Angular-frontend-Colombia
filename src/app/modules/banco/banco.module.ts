@@ -14,6 +14,7 @@ import { FormsModule, NgForm, FormGroup, ReactiveFormsModule } from '@angular/fo
 import { HttpClientModule } from '@angular/common/http';
 import { NarvarComponent } from './components/narvar/narvar/narvar.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
+import { TransferComponent } from './pages/transfer/transfer/transfer.component';
 
 
 
@@ -29,6 +30,7 @@ import { NewAccountComponent } from './components/new-account/new-account.compon
     DepositComponent,
     NewAccountComponent,
     PhoneNumberPipe,
+    TransferComponent,
 
 
 

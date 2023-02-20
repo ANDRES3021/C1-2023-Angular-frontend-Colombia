@@ -8,6 +8,7 @@ import { DatosUsuarioComponent } from './pages/datos-usuario/datos-usuario.compo
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TransferComponent } from './pages/transfer/transfer/transfer.component';
 
 
 
@@ -33,7 +34,9 @@ component: NewAccountComponent,
 { path: 'deposito', //localhost:4200/banco
 component: DepositComponent,
 },
-
+{ path: 'transferencia', //localhost:4200/banco
+component: TransferComponent,
+},
 ];
 
 @NgModule({
