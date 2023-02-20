@@ -16,14 +16,11 @@ const routes: Routes = [
   {
     path: 'banco/login',
     component: LogComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectLoggedInToDashboard }
   },
   {
     path: 'banco/home',
     component:  PrincipalComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin }
+
   },
 
    { path: 'banco',

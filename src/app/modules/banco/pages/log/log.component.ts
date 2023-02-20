@@ -35,6 +35,21 @@ export class LogComponent implements OnInit {
       this.authService.GoogleAuth();
      }
 
+     sendLogin() {
+      const { email, password } = this.frmFormulario.value;
+      this.loginService.sendLogin(email, password).subscribe({
+        next:(token) => {
+          localStorage.setItem('token', token.access_token);
+          localStorage.setItem('id', token.id);
+
+        },
+        error: (err) => {
+          console.log(err.error);
+        } }
+      );
+    }
+
+
   }
 
 
