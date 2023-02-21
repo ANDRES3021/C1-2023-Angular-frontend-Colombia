@@ -2,7 +2,8 @@ import { AuthService } from './../../../main/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/modules/main/services/login/login.service';
-
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log',
@@ -13,7 +14,7 @@ import { LoginService } from 'src/app/modules/main/services/login/login.service'
 export class LogComponent implements OnInit {
   frmFormulario: FormGroup = new FormGroup({});
 
-  constructor(private loginService: LoginService, private readonly authService: AuthService) {
+  constructor(private loginService: LoginService,  private readonly router: Router, private readonly authService: AuthService) {
   }
   ngOnInit(): void {
     this.htmlformulario();
@@ -41,17 +42,24 @@ export class LogComponent implements OnInit {
         next:(token) => {
           localStorage.setItem('token', token.access_token);
           localStorage.setItem('id', token.id);
+          this.router.navigate(['banco/home']);
 
         },
         error: (err) => {
-          console.log(err.error);
-        } }
-      );
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha habido un error en el inicio de sesión.',
+          });
+        },
+        complete: () => {
+          Swal.fire({
+            icon: 'success',
+            title: '¡Inicio de sesión exitoso!',
+            showConfirmButton: false,
+            timer: 3000,
+          });
+        },
+      });
     }
-
-
   }
-
-
-
-

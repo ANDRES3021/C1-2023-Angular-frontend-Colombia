@@ -3,7 +3,8 @@ import { UsersService } from '../../../main/services/users/users.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormControl, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
-
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterComponent{
    * The constructor is a function that is called when a new instance of the class is created
    * @param {UsersService} customerService - UsersService
    */
-  constructor(public readonly customerService: UsersService) {
+  constructor(public readonly customerService: UsersService  ,  private readonly router: Router) {
     this.frmFormulario = new FormGroup({
       documentTypeId: new FormControl('', Validators.required),
       document: new FormControl('', Validators.required),
@@ -50,9 +51,23 @@ export class RegisterComponent{
       next: token => {
         localStorage.setItem('token', token.access_token);
         localStorage.setItem('id', token.id);
+        this.router.navigate(['banco/login']);
       },
-      error: (err) => console.error(err),
-      complete: () => console.info("completado"),
+      error: (err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ha habido un error en el registro.',
+        });
+      },
+      complete: () => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Registro exitoso',
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      },
     });
   }
 
