@@ -6,8 +6,9 @@ import {
   Validators,
 
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DepositService } from 'src/app/modules/main/services/deposit/deposit.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-deposit',
   templateUrl: './deposit.component.html',
@@ -26,7 +27,8 @@ export class DepositComponent implements OnInit {
    */
   constructor(
     private readonly depositService: DepositService,
-    private frmBuilder: FormBuilder
+    private frmBuilder: FormBuilder,
+    private readonly router: Router
   ) {
     this.frmDeposit = this.frmBuilder.group({
       account: new FormControl('', [
@@ -48,12 +50,23 @@ export class DepositComponent implements OnInit {
     this.depositService.createDeposit(this.frmDeposit.getRawValue()).subscribe({
       next: data => {
         console.log(data);
+        this.router.navigate(['banco/historial']);
       },
       error: err => {
         console.log(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ha habido un error al hacer el deposito.',
+        });
       },
       complete: () => {
-        console.log('complete');
+        Swal.fire({
+          icon: 'success',
+          title: '¡Deposito exitoso!',
+          showConfirmButton: false,
+          timer: 3000,
+        });
       },
     });
   }

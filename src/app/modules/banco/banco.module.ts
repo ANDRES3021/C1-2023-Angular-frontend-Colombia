@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NarvarComponent } from './components/narvar/narvar/narvar.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
 import { TransferComponent } from './pages/transfer/transfer/transfer.component';
+import { HistorialTransferComponent } from './pages/historial2/historial-transfer/historial-transfer.component';
 
 
 
@@ -31,6 +32,7 @@ import { TransferComponent } from './pages/transfer/transfer/transfer.component'
     NewAccountComponent,
     PhoneNumberPipe,
     TransferComponent,
+    HistorialTransferComponent,
 
 
 

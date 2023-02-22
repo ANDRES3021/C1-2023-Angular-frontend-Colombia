@@ -1,3 +1,4 @@
+import { HistorialTransferComponent } from './pages/historial2/historial-transfer/historial-transfer.component';
 import { DepositComponent } from './pages/deposit/deposit.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -36,6 +37,9 @@ component: DepositComponent,
 },
 { path: 'transferencia', //localhost:4200/banco
 component: TransferComponent,
+},
+{ path: 'historialtransferencias', //localhost:4200/banco
+component: HistorialTransferComponent,
 },
 ];
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NewTransferServiceService } from 'src/app/modules/main/services/transfer/new-transfer.service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-transfer',
@@ -40,7 +41,7 @@ export class TransferComponent {
         Validators.minLength(1),
         Validators.maxLength(500),
       ]),
-    });
+    } );
   }
 
 
@@ -54,12 +55,24 @@ export class TransferComponent {
         next: (data) => {
           this.transferService.setTransferId(data.id);
           console.log(data);
+
         },
         error: err => {
           console.log(err);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ha habido un error al hacer la transferencia.',
+          });
         },
         complete: () => {
           console.log('complete');
+          Swal.fire({
+            icon: 'success',
+            title: '¡transferencia exitosa!',
+            showConfirmButton: false,
+            timer: 3000,
+          });
         },
       });
   }
