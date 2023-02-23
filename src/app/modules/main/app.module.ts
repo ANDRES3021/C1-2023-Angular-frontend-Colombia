@@ -1,5 +1,4 @@
-import { FormsModule} from '@angular/forms';
-
+import { BancoModule } from '../banco/banco.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
@@ -7,12 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from '../pages/app/app.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../../../../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { AppComponent } from './pages/app/app.component';
+import { environment } from 'src/environments/environment';
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 
 
 
@@ -22,8 +21,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
-
+    AngularFireAuthModule,
+    BancoModule,
   ],
   declarations: [
     AppComponent,

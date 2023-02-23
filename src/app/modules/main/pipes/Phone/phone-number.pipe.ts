@@ -1,9 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'phone'
+  name: 'phoneNumber'
 })
 export class PhoneNumberPipe implements PipeTransform {
+
   transform(value: string): string {
     if (!value) {
       return 'el numero no existe';

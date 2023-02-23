@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
 import { AccountInterface } from '../../interfaces/account.interface';
 import { UsersService } from './../../../main/services/users/users.service';
-import { UserModel } from './../../../main/models/user.model';
+
 import { Component, OnInit } from '@angular/core';
-import { PhoneNumberPipe } from 'src/app/modules/main/pipes/phoneNumber.pipe';
+
 @Component({
   selector: 'app-datos-usuario',
   templateUrl: './datos-usuario.component.html',
@@ -12,13 +12,14 @@ import { PhoneNumberPipe } from 'src/app/modules/main/pipes/phoneNumber.pipe';
 /* Creating a class called DatosUsuarioComponent that implements the OnInit interface. */
 export class DatosUsuarioComponent implements OnInit {
  accounts: AccountInterface[];
-
+  state!:string;
   constructor(private readonly userService : UsersService, private readonly router: Router) {
   this.accounts = new Array<AccountInterface>()
   }
-  verTransferencia(id: string){
-    localStorage.setItem('account', id)
-    this.router.navigate(['banco/historialtransferencias'])
+
+
+  favoriteAccount($event:string){
+    this.state=$event
   }
   /**
    * The function gets the id from the local storage and uses it to get the account details from the

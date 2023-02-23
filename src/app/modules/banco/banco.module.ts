@@ -1,4 +1,4 @@
-import { PhoneNumberPipe } from './../main/pipes/phoneNumber.pipe';
+import { PhoneNumberPipe } from '../main/pipes/Phone/phone-number.pipe';
 import { DepositComponent } from './pages/deposit/deposit.component';
 import { bancoRoutingModule } from './banco-routing.module';
 import { NgModule } from '@angular/core';
@@ -13,6 +13,7 @@ import { NarvarComponent } from './components/narvar/narvar/narvar.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
 import { TransferComponent } from './pages/transfer/transfer/transfer.component';
 import { HistorialTransferComponent } from './pages/historial2/historial-transfer/historial-transfer.component';
+import { AccountDataComponent } from './components/account-data/account-data.component';
 
 
 
@@ -28,6 +29,7 @@ import { HistorialTransferComponent } from './pages/historial2/historial-transfe
     PhoneNumberPipe,
     TransferComponent,
     HistorialTransferComponent,
+    AccountDataComponent,
 
   ],
   imports: [

@@ -7,9 +7,6 @@ import { FormsModule, NgForm, FormGroup, ReactiveFormsModule } from '@angular/fo
 import { HttpClientModule } from '@angular/common/http';
 import { authRoutingModule } from './auth-routing.module';
 
-
-
-
 @NgModule({
   declarations: [
     LogComponent,
