@@ -1,0 +1,36 @@
+<div>
+    <div class="card py-3 px-2" (click)="select()">
+        <div class="about">
+            <small class="text-uppercase text-muted">tipo de cuenta</small>
+            <h3 class="text-danger">{{account.accountType.name}}</h3>
+            <small>{{account.id}}</small>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center p-2 text-white">
+            <h2>{{account.balance | currency }}</h2>
+            <div class="d-flex flex-column steam-price">
+                <div class="d-flex flex-row align-items-center">
+                    <i class="fa fa-check-circle"></i>
+                    <small class="ml-1">USA</small>
+                </div>
+                <small class="text-muted steam">Saldo cuenta</small>
+            </div>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center p-2">
+            <div class="d-flex flex-row align-items-center">
+                <img src="https://img.icons8.com/fluent/96/000000/user-male-circle.png" width="40" />
+                <div class="d-flex flex-column ml-2">
+                    <span>{{account.customer.fullName}}</span>
+                    <small class="text-muted seller">{{account.customer.phone | phone }}</small>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 p-2">
+            <button class="btn btn-primary btn-block cart"><a href="/banco/crearcuenta">crear una nueva
+                    cuenta</a></button>
+            <button class="btn btn-outline-primary btn-block cart" (click)="verTransferencia()"><i
+                    class="fa fa-eye text-primary"></i> ver historial de movimientos</button>
+        </div>
+    </div>
+</div>

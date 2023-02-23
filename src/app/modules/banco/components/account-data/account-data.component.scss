@@ -1,0 +1,120 @@
+#radius-shape-1 {
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: -130px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+#radius-shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.9) !important;
+  backdrop-filter: saturate(200%) blur(25px);
+}
+.wrapper{
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #060d25;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card{
+
+
+  background-color: #001334;
+  color: #fff;
+  margin-bottom: 20px;
+  width: calc(33.33% - 10px);
+  flex: 1 0 300px;
+  margin: 0 10px 20px 10px;
+
+}
+
+.about{
+  width: 400px;
+  padding: 10px;
+  color: #fff;
+}
+
+.about small{
+
+  font-size: 10px;
+}
+
+hr{
+
+  color: #fff;
+  margin-top: 0px;
+}
+
+
+.steam{
+  margin-top: -5px;
+}
+
+
+
+.seller{
+      margin-top: -6px;
+      font-size: 14px;
+}
+
+
+.steam-price{
+
+      margin-right: 115px !important;
+}
+
+.margin{
+      margin-top: -6px;
+    color: #6c757d !important;
+    font-size: 13px;
+}
+
+.response div{
+
+  margin-right: 10px;
+}
+
+.fa-check-circle{
+  color: #1775e5;
+}
+
+
+.fa-thumbs-up{
+      color: #79d254;
+}
+
+
+
+.fa-thumbs-down{
+    color: #e05a59;
+}
+
+
+.cart{
+  height: 50px;
+  margin-bottom: 20px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
