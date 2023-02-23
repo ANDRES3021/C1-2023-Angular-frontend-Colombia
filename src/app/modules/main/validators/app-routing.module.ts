@@ -7,21 +7,17 @@ import {
   redirectLoggedInTo,
   redirectUnauthorizedTo
 } from '@angular/fire/compat/auth-guard';
-import { LogComponent } from '../../banco/pages/log/log.component';
+import { LogComponent } from '../../auth/pages/log/log.component';
 import { PrincipalComponent } from '../../banco/pages/principal/principal.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['banco/login']);
 const redirectLoggedInToDashboard = () => redirectLoggedInTo(['banco/home']);
 const routes: Routes = [
-  {
-    path: 'banco/login',
-    component: LogComponent,
-  },
-  {
-    path: 'banco/home',
-    component:  PrincipalComponent,
+  { path: 'auth',
+    loadChildren: () => import('src/app/modules/auth/auth.module').then(m => m.AuthModule)  //localhost:4200/banco
 
   },
+
 
    { path: 'banco',
     loadChildren: () => import('src/app/modules/banco/banco.module').then(m => m.BancoModule)  //localhost:4200/banco

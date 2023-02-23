@@ -16,30 +16,13 @@ import Swal from 'sweetalert2';
 })
 /* Creating a new instance of the DepositComponent class. */
 export class DepositComponent implements OnInit {
-  frmDeposit: FormGroup;
+  frmDeposit = { account: '', amount: "0" };
 
-  /**
-   * The constructor function is used to initialize the class and it is called when the class is
-   * instantiated
-   * @param {DepositService} depositService - This is the service that we created earlier.
-   * @param {FormBuilder} frmBuilder - FormBuilder - This is the FormBuilder service that we imported
-   * earlier.
-   */
   constructor(
     private readonly depositService: DepositService,
-    private frmBuilder: FormBuilder,
     private readonly router: Router
   ) {
-    this.frmDeposit = this.frmBuilder.group({
-      account: new FormControl('', [
-        Validators.required,
-        Validators.minLength(10),
-      ]),
-      amount: new FormControl('', [
-        Validators.required,
-        Validators.pattern(new RegExp(/\d+(\.\d{0,9})?/)),
-      ]),
-    });
+
   }
 
   /**
@@ -47,7 +30,7 @@ export class DepositComponent implements OnInit {
    * passing in the raw value of the form
    */
   createDeposit() {
-    this.depositService.createDeposit(this.frmDeposit.getRawValue()).subscribe({
+    this.depositService.createDeposit(this.frmDeposit).subscribe({
       next: data => {
         console.log(data);
         this.router.navigate(['banco/historial']);

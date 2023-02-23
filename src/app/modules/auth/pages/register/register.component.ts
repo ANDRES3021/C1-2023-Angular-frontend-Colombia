@@ -51,7 +51,7 @@ export class RegisterComponent{
       next: token => {
         localStorage.setItem('token', token.access_token);
         localStorage.setItem('id', token.id);
-        this.router.navigate(['banco/login']);
+        this.router.navigate(['auth/login']);
       },
       error: (err) => {
         Swal.fire({

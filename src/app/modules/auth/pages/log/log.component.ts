@@ -1,7 +1,7 @@
+import { LoginService } from 'src/app/modules/main/services/login/login.service';
 import { AuthService } from './../../../main/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from 'src/app/modules/main/services/login/login.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 

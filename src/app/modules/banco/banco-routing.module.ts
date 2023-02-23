@@ -1,8 +1,8 @@
 import { HistorialTransferComponent } from './pages/historial2/historial-transfer/historial-transfer.component';
 import { DepositComponent } from './pages/deposit/deposit.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
-import { RegisterComponent } from './components/register/register.component';
-import { LogComponent } from './pages/log/log.component';
+import { RegisterComponent } from '../auth/pages/register/register.component';
+import { LogComponent } from '../auth/pages/log/log.component';
 
 import { HistorialComponent } from './pages/historial/historial.component';
 import { DatosUsuarioComponent } from './pages/datos-usuario/datos-usuario.component';
@@ -14,7 +14,7 @@ import { TransferComponent } from './pages/transfer/transfer/transfer.component'
 
 
 const routes: Routes = [
-  { path: 'home', //localhost:4200/banco
+{ path: 'home', //localhost:4200/banco
     component: PrincipalComponent,
 },
 { path: 'usuario', //localhost:4200/banco
@@ -22,12 +22,6 @@ component: DatosUsuarioComponent,
 },
 { path: 'historial', //localhost:4200/banco
 component: HistorialComponent,
-},
-{ path: 'login', //localhost:4200/banco
-component: LogComponent,
-},
-{ path: 'registro', //localhost:4200/banco
-component: RegisterComponent,
 },
 { path: 'crearcuenta', //localhost:4200/banco
 component: NewAccountComponent,

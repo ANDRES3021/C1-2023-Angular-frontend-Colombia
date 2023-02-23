@@ -56,17 +56,22 @@
           types of accounts and transfer between accounts of different banks
         </p>
 
-        <form [formGroup]="frmDeposit" (ngSubmit)="createDeposit()">
-          <div>
-            <label for="account">Account:</label>
-            <input id="account" type="text" formControlName="account">
+        <form  #depositForm="ngForm">
+          <div class="form-group">
+            <label for="account">Cuenta:</label>
+            <input type="text" class="form-control" id="account" name="account" [(ngModel)]="frmDeposit.account" required>
           </div>
-
-          <div>
-            <label for="amount">Amount:</label>
-            <input id="amount" type="text" formControlName="amount">
+          <div class="form-group">
+            <label for="amount">Cantidad:</label>
+            <input type="text" class="form-control" id="amount" name="amount" [(ngModel)]="frmDeposit.amount" required>
           </div>
-          <button type="submit" [disabled]="frmDeposit.invalid">Create Deposit</button>
-        </form>
+      <div class="form-field col-lg-12">
+        <input
+          (click)="createDeposit()"
+          class="submit-btn"
+          type="submit"
+          value="Enviar" />
+      </div>
+    </form>
 
 

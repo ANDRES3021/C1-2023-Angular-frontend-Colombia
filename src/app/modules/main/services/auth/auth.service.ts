@@ -32,7 +32,7 @@ export class AuthService {
    SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.clear();
-      this.router.navigate(['banco/login']);
+      this.router.navigate(['auth/login']);
     });
   }
 }
