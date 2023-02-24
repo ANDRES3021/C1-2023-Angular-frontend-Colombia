@@ -1,3 +1,4 @@
+import { DataService } from './../../../../main/services/data/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NarvarComponent implements OnInit {
 
-  constructor() { }
+  mensaje : string = 'Home'
+  constructor(private dataService :DataService) { }
 
   ngOnInit(): void {
+    this.dataService.nombreEvento.subscribe( texto => {
+      this.mensaje = texto;
+      console.log('Home:', texto);
+    });
   }
 
 }

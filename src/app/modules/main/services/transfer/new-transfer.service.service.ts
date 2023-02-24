@@ -97,10 +97,10 @@ export class NewTransferServiceService {
     );
   }
   /**
-   * It returns an observable of type TransferInterface
-   * @param {string} transferId - The id of the transfer you want to get.
-   * @returns The transfer object with the given transferId.
-   */
+ * Obtiene los detalles de una transferencia específica mediante su ID.
+ * @param {string} transferId - El ID de la transferencia que se desea obtener.
+ * @returns {Observable<TransferInterface>} - Un observable que emite un objeto con los detalles de la transferencia.
+ */
   getTransfer(transferId: string): Observable<TransferInterface> {
     const httpOptions = {
       headers: new HttpHeaders({

@@ -9,22 +9,25 @@ import {
 } from '@angular/fire/compat/auth-guard';
 
 
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['banco/login']);
-const redirectLoggedInToDashboard = () => redirectLoggedInTo(['banco/home']);
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['auth/login']);
+const redirectLoggedInToDashboard = () => redirectLoggedInTo(['banco/principal']);
 const routes: Routes = [
   { path: 'auth',
-    loadChildren: () => import('src/app/modules/auth/auth.module').then(m => m.AuthModule)  //localhost:4200/banco
-
+    loadChildren: () => import('src/app/modules/auth/auth.module').then(m => m.AuthModule),  //localhost:4200/banco
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToDashboard },
   },
 
 
    { path: 'banco',
-    loadChildren: () => import('src/app/modules/banco/banco.module').then(m => m.BancoModule)  //localhost:4200/banco
-
+    loadChildren: () => import('src/app/modules/banco/banco.module').then(m => m.BancoModule),  //localhost:4200/banco
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToDashboard },
   },
   {
     path:'**',
     redirectTo: 'auth',
+    
   },
 ];
 

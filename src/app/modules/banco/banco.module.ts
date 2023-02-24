@@ -15,6 +15,7 @@ import { TransferComponent } from './pages/transfer/transfer/transfer.component'
 import { HistorialTransferComponent } from './pages/historial2/historial-transfer/historial-transfer.component';
 import { AccountDataComponent } from './components/account-data/account-data.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HijoComponent } from './components/hijo/hijo.component';
 
 
 
@@ -32,6 +33,7 @@ import { HomeComponent } from './pages/home/home.component';
     HistorialTransferComponent,
     AccountDataComponent,
     HomeComponent,
+    HijoComponent,
 
   ],
   imports: [

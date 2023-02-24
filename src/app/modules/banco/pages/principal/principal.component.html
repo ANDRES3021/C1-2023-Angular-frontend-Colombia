@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 <header>
-
+  <app-hijo></app-hijo>
   <button type="button" (click)="logout()" id="my-button">Cerrar Sesion</button>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -32,9 +32,9 @@
                 <div class="carousel-caption">
                     <h2 class="animated zoomIn" style="animation-delay: 1s">Banco <span>Sofka</span></h2>
                     <h3 class="animated fadeInLeft" style="animation-delay: 2s">Hacemos posible que sus transacciones de manera digital</h3>
-                    <p class="animated zoomIn" style="animation-delay: 3s"><a href="#">Contact Us</a></p>
+                    <button  (click)="cambiarNombre()">cambia mensaje </button>
                 </div>
             </div>
-        </div> <!-- Controls --> <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+        </div> <!-- Controls -->
     </div>
 </header>

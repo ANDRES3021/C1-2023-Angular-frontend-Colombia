@@ -10,6 +10,12 @@ export class NewAccountService {
 
 
   constructor(private readonly httpClient: HttpClient) { }
+  /**
+ * Crea una nueva cuenta bancaria.
+ * @param {string} accountTypeId - El ID del tipo de cuenta.
+ * @param {string} Customer - El ID del cliente que solicita la cuenta.
+ * @returns {Observable<AccountInterface>} - Un observable que emite la nueva cuenta creada.
+ */
   createAccount(
     accountTypeId: string,
     Customer: string,

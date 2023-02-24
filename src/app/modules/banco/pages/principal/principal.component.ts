@@ -1,3 +1,4 @@
+import { DataService } from './../../../main/services/data/data.service';
 import { AuthService } from './../../../main/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService, private dataService: DataService) { }
 
   logout(): void {
     this.authService.SignOut();
   }
   ngOnInit(): void {
   }
+  cambiarNombre(){
+    this.dataService.nombreEvento.emit('Andres Pardo')
+
+  }
+
 
 }
