@@ -1,3 +1,4 @@
+import { HomeComponent } from './pages/home/home.component';
 import { HistorialTransferComponent } from './pages/historial2/historial-transfer/historial-transfer.component';
 import { DepositComponent } from './pages/deposit/deposit.component';
 import { NewAccountComponent } from './components/new-account/new-account.component';
@@ -14,27 +15,34 @@ import { TransferComponent } from './pages/transfer/transfer/transfer.component'
 
 
 const routes: Routes = [
-{ path: 'home', //localhost:4200/banco
-    component: PrincipalComponent,
-},
-{ path: 'usuario', //localhost:4200/banco
-component: DatosUsuarioComponent,
-},
-{ path: 'historial', //localhost:4200/banco
-component: HistorialComponent,
-},
-{ path: 'crearcuenta', //localhost:4200/banco
-component: NewAccountComponent,
-},
-{ path: 'deposito', //localhost:4200/banco
-component: DepositComponent,
-},
-{ path: 'transferencia', //localhost:4200/banco
-component: TransferComponent,
-},
-{ path: 'historialtransferencias', //localhost:4200/banco
-component: HistorialTransferComponent,
-},
+  {
+    path: '', //localhost:4200/banco
+    component: HomeComponent,
+    children : [
+      {path: 'principal', //localhost:4200/banco
+      component: PrincipalComponent},
+      { path: 'usuario', //localhost:4200/banco
+      component: DatosUsuarioComponent,
+      },
+      { path: 'historial', //localhost:4200/banco
+      component: HistorialComponent,
+      },
+      { path: 'crearcuenta', //localhost:4200/banco
+      component: NewAccountComponent,
+      },
+      { path: 'deposito', //localhost:4200/banco
+      component: DepositComponent,
+      },
+      { path: 'transferencia', //localhost:4200/banco
+      component: TransferComponent,
+      },
+      { path: 'historialtransferencias', //localhost:4200/banco
+      component: HistorialTransferComponent,
+      },
+    ]
+  }
+
+
 ];
 
 @NgModule({

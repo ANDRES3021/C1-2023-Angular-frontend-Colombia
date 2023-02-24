@@ -42,7 +42,7 @@ export class LogComponent implements OnInit {
         next:(token) => {
           localStorage.setItem('token', token.access_token);
           localStorage.setItem('id', token.id);
-          this.router.navigate(['banco/home']);
+          this.router.navigate(['banco/principal']);
 
         },
         error: (err) => {

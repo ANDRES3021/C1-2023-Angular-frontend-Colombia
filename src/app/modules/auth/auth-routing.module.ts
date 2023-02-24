@@ -15,7 +15,10 @@ component: LogComponent,
 { path: 'registro', //localhost:4200/banco
 component: RegisterComponent,
 },
-
+{
+  path: '**',
+  redirectTo: 'login'
+},
 
 ];
 
